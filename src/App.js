@@ -6,17 +6,21 @@ import quotes from './quotes.js';
 
 class App extends Component {
   constructor(props) {
-    super(props);    
-    this.state = {
-       index: 0
+    super(props);   
+    let index =Math.floor(Math.random() * 9); 
+    this.state = {       
+       quote: quotes[index].quote,
+       author: quotes[index].author,
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
-    console.log('click');
+    console.log('click');    
+    this.index = Math.floor(Math.random() * 9);    
     this.setState({
-      index: 1
+      quote: quotes[this.index].quote,
+      author: quotes[this.index].author
     });
   }
 
@@ -24,12 +28,12 @@ class App extends Component {
     return (
       <div id="quote-box">
         <div id="text">
-          {quotes[this.state.index].quote}
+          {this.state.quote}
         </div>          
         <div id="author">
-          {quotes[this.state.index].author}
+          {this.state.author}
         </div>
-          <Button bsStyle="success" id="new-quote">
+          <Button bsStyle="success" id="new-quote" onClick={this.handleClick}>
             New Quote
           </Button>
       </div>
