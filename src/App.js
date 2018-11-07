@@ -15,8 +15,7 @@ class App extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
-    console.log('click');    
+  handleClick() {    
     this.index = Math.floor(Math.random() * 9);    
     this.setState({
       quote: quotes[this.index].quote,
@@ -34,7 +33,7 @@ class App extends Component {
           {this.state.author}
         </div>
           <Button bsStyle="success" id="new-quote" onClick={this.handleClick}>
-            New Quote
+            New Quote1
           </Button>
       </div>
     );
