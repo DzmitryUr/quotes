@@ -26,15 +26,25 @@ class App extends Component {
   render() {
     return (
       <div id="quote-box">
+      <div>
         <div id="text">
-          {this.state.quote}
+          <h2>{this.state.quote}</h2>
         </div>          
-        <div id="author">
-          {this.state.author}
+        <div id="author" className="pull-right">
+          - <i>{this.state.author}</i>
         </div>
+      </div>
+      <br/>
+      <div>  
+        <div className="pull-left">
+          <a href="http://twitter.com/intent/tweet" id="tweet-quote">Twit</a>
+        </div>
+        <div className="pull-right">
           <Button bsStyle="success" id="new-quote" onClick={this.handleClick}>
-            New Quote1
+            New Quote
           </Button>
+        </div>  
+      </div>  
       </div>
     );
   }
