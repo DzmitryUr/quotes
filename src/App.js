@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Button } from 'react-bootstrap';
 import quotes from './quotes.js';
@@ -27,19 +26,19 @@ class App extends Component {
     return (
       <div id="quote-box">
       <div>
-        <div id="text">
+        <div id="text" className="margin-5">
           <h2>{this.state.quote}</h2>
         </div>          
-        <div id="author" className="pull-right">
+        <div id="author" className="pull-right margin-5">
           - <i>{this.state.author}</i>
         </div>
       </div>
       <br/>
       <div>  
-        <div className="pull-left">
+        <div className="pull-left margin-5">
           <a href="http://twitter.com/intent/tweet" id="tweet-quote">Twit</a>
         </div>
-        <div className="pull-right">
+        <div className="pull-right margin-5">
           <Button bsStyle="success" id="new-quote" onClick={this.handleClick}>
             New Quote
           </Button>
